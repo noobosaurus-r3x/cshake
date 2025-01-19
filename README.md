@@ -167,18 +167,20 @@ docker run --rm -it -e TERM=xterm-256color noobosaurusr3x/cshake [OPTIONS] https
 1. **Basic Single-Shot Analysis**
 
     ```bash
-    python3 cshake.py https://example.com
+    python3 cshake.py https://noobosaurusr3x.fr
     ```
 
     Displays handshake details, certificate chain, and basic security alerts.
+![Basic Command](screenshots/screenshot_normal.png)
 
 2. **Real-Time Handshake Tracking**
 
     ```bash
-    python3 cshake.py https://example.com -r
+    python3 cshake.py https://noobosaurusr3x.fr -r
     ```
 
     Outputs each TLS stage (Client Hello, Server Hello, etc.) in real-time.
+![Real Time](screenshots/screenshot_r.png)
 
 3. **Verbose Output**
 
@@ -191,11 +193,11 @@ docker run --rm -it -e TERM=xterm-256color noobosaurusr3x/cshake [OPTIONS] https
 4. **ASCII Animation**
 
     ```bash
-    python3 cshake.py https://example.com -a
+    python3 cshake.py https://noobosaurusr3x.fr -a
     ```
 
     Provides a step-by-step console animation of the handshake stages (if not using `--realtime`).
-
+![ASCII Command](screenshots/screenshot_a.png)
 5. **Structured Output**
 
     ```bash
@@ -207,10 +209,11 @@ docker run --rm -it -e TERM=xterm-256color noobosaurusr3x/cshake [OPTIONS] https
 6. **Combined Real-Time and Verbose Output**
 
     ```bash
-    python3 cshake.py https://example.com -r -v
+    python3 cshake.py https://noobosaurusr3x.fr -r -v
     ```
 
     Combines real-time TLS stage tracking with verbose cURL output.
+![Full Check](screenshots/full.png)
 
     > **Note:** The `-a` (ASCII Animation) and `-r` (Real-Time) options are **incompatible** and cannot be used together. If both flags are provided, `-r` will take precedence, and `-a` will be ignored.
 
