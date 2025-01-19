@@ -1,0 +1,6 @@
+validators
+rich
+pyOpenSSL
+cryptography
+PyYAML
+requests
