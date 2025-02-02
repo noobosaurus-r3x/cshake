@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TLS Handshake Analysis Report</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; padding: 20px; }
+    h1, h2 { color: #333; }
+    pre { white-space: pre-wrap; background: #fff; padding: 10px; border-radius: 5px; }
+    .panel { background: #fff; padding: 15px; margin-bottom: 20px; box-shadow: 0 0 5px #ccc; border-radius: 5px; }
+    hr { border: none; border-top: 1px solid #ccc; margin: 40px 0; }
+  </style>
+</head>
+<body>
+  <h1>TLS Handshake Analysis Report</h1>
+  {% for result in bulk_results %}
+  <div class="panel">
+    <h2>Connection Summary - {{ result.Connection.Domain }}</h2>
+    <pre>{{ result.Connection | tojson(indent=4) }}</pre>
+  </div>
+  {% if result.SSLDetails %}
+  <div class="panel">
+    <h2>SSL Connection Details</h2>
+    <pre>{{ result.SSLDetails | tojson(indent=4) }}</pre>
+  </div>
+  {% endif %}
+  <div class="panel">
+    <h2>Certificates</h2>
+    <pre>{{ result.Certificates | tojson(indent=4) }}</pre>
+  </div>
+  <div class="panel">
+    <h2>Handshake Details</h2>
+    <pre>{{ result.Handshake | tojson(indent=4) }}</pre>
+  </div>
+  <div class="panel">
+    <h2>OCSP</h2>
+    <pre>{{ result.OCSP | tojson(indent=4) }}</pre>
+  </div>
+  <div class="panel">
+    <h2>Security Alerts</h2>
+    <pre>{{ result.Security | tojson(indent=4) }}</pre>
+  </div>
+  <div class="panel">
+    <h2>Trust Status</h2>
+    <pre>{{ result.TrustStatus }}</pre>
+  </div>
+  <hr>
+  {% endfor %}
+</body>
+</html>

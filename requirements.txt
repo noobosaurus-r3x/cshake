@@ -1,0 +1,7 @@
+pyOpenSSL
+cryptography
+validators
+requests
+rich
+jinja2
+PyYAML
